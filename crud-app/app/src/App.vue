@@ -1,5 +1,6 @@
 <template>
-  <CustomHeader v-if="showHeader" />
+  <!-- <CustomHeader v-if="showHeader" /> --> 
+  <CustomInput />
 
   <div v-show="showName">Nome: {{ firstName }} Sobrenome: {{ lastName }}</div>
 
@@ -12,14 +13,14 @@
 </template>
 
 <script>
-import CustomHeader from "./components/CustomHeader.vue";
 import HelloWorld from "./components/HelloWorld.vue";
+import CustomInput from "./components/CustomInput.vue";
 
 export default {
   name: "App",
   components: {
     HelloWorld,
-    CustomHeader,
+    CustomInput,
   },
   data() {
     return {

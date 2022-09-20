@@ -21,6 +21,54 @@
       <p :class="pBox">box</p>
     </div>
 
+    <div>Two-way data binding v-model -> formularios</div>
+
+    <div>
+      <label>Nome:</label> <br />
+      <input v-model="name" type="text" /><br />
+      {{ name }}
+    </div>
+
+    <br />
+
+    <div>
+      <label>Sports</label><br />
+      <select v-model="sports">
+        <option value="">Escolha</option>
+        <option value="futebol">Futebol</option>
+        <option value="basquete">basquete</option>
+        <option value="skate">skate</option>
+      </select>
+
+      {{ sports }}
+    </div>
+
+    <div>
+      <label>Newsletter</label><br />
+      <input v-model="newsletter" type="radio" value="sim" /> Sim
+
+      <input v-model="newsletter" type="radio" value="nao" /> Não <br />
+      {{ newsletter }}
+    </div>
+
+    <div>
+      <label>Contrato</label><br />
+      <input v-model="contract" type="checkbox" value="sim" /> Aceita nosso
+      termos <br />
+
+      {{ contract }}
+    </div>
+
+    <br />
+
+    <div>
+      <label>Cores que você mais gosta</label><br />
+      <input v-model="colors" type="checkbox" value="Azul" /> Azul
+
+      <input v-model="colors" type="checkbox" value="Amarelo" /> Amarelo <br />
+      {{ colors }}
+    </div>
+
     <div v-for="(obj, index) in todos" :key="obj.id" class="todos-item">
       <img v-if="obj.imgSrc" :src="obj.imgSrc" alt="" />
       {{ index }} - {{ obj.title }}
@@ -33,6 +81,11 @@ export default {
   name: "CustomHeader",
   data() {
     return {
+      name: "",
+      sports: "",
+      newsletter: "",
+      colors: [],
+      contract: false,
       isHome: false,
       classVar: "title",
       pClass: ["text", "text-home"],
