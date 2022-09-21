@@ -12,12 +12,22 @@
     <button type="submit">Enviar</button>
   </form>
 
+  <br /><br />
+
   <div>
     <label>Explique por que você gosta dessa menina?</label><br />
     <textarea v-model="textArea"></textarea><br />
     <p :class="pClass">
       {{ textArea }}
     </p>
+  </div>
+
+  <br /><br />
+
+  <div>
+    <button v-on:click.stop="say('hello')">Plus +1</button>
+    <button v-on:click.once="say('bye')">Plus -1</button>
+    <button v-on:click.prevent="warn('warn')">Warn</button>
   </div>
 </template>
 
@@ -28,6 +38,7 @@ export default {
     return {
       textArea: "",
       pClass: "pClass",
+      count: 0,
     };
   },
 
@@ -40,6 +51,15 @@ export default {
     },
     onKeyUp(evt) {
       console.log("onKeyUp", evt);
+    },
+    say(message) {
+      alert(message);
+    },
+    warn(message, event) {
+      if (event) {
+        event.preventDefault();
+      }
+      console.log(message);
     },
   },
 };

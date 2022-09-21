@@ -1,26 +1,21 @@
 <template>
-  <!-- <CustomHeader v-if="showHeader" /> --> 
-  <CustomInput />
+  <!-- <CustomHeader v-if="showHeader" /> -->
+  <PropetyTemplate />
 
   <div v-show="showName">Nome: {{ firstName }} Sobrenome: {{ lastName }}</div>
 
   <div v-if="accessLevel === 'admin'">Admin</div>
   <div v-else-if="accessLevel === 'marketing'">Marketing</div>
   <div v-else>User</div>
-
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-import CustomInput from "./components/CustomInput.vue";
+import PropetyTemplate from "./components/PropetyTemplate.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
-    CustomInput,
+    PropetyTemplate,
   },
   data() {
     return {
