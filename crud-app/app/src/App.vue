@@ -1,6 +1,5 @@
 <template>
-  <!-- <CustomHeader v-if="showHeader" /> -->
-  <PropetyTemplate />
+  <WatchersVue />
 
   <div v-show="showName">Nome: {{ firstName }} Sobrenome: {{ lastName }}</div>
 
@@ -10,12 +9,12 @@
 </template>
 
 <script>
-import PropetyTemplate from "./components/PropetyTemplate.vue";
+import WatchersVue from "./components/WatchersVue.vue";
 
 export default {
   name: "App",
   components: {
-    PropetyTemplate,
+    WatchersVue,
   },
   data() {
     return {
