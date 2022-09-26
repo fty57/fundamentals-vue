@@ -1,4 +1,9 @@
 <template>
+  <CardMovie>
+    <template v-slot:CardTitle> Black Phone </template>
+    <template v-slot:CardDescription> Never call to him again</template>
+  </CardMovie>
+
   <TheHeader>
     <template v-slot:title>
       <h1>Home</h1>
@@ -20,11 +25,13 @@
 
 <script>
 import TheHeader from "./components/TheHeader.vue";
+import CardMovie from "./components/CardMovie.vue";
 
 export default {
   name: "App",
   components: {
     TheHeader,
+    CardMovie,
   },
   data() {
     return {
