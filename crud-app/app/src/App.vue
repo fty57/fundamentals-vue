@@ -1,5 +1,5 @@
 <template>
-  <WatchersVue />
+  <LifeCycle />
 
   <div v-show="showName">Nome: {{ firstName }} Sobrenome: {{ lastName }}</div>
 
@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import WatchersVue from "./components/WatchersVue.vue";
+import LifeCycle from "./components/LifeCycle.vue";
 
 export default {
   name: "App",
   components: {
-    WatchersVue,
+    LifeCycle,
   },
   data() {
     return {
