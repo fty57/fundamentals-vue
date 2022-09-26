@@ -1,5 +1,15 @@
 <template>
-  <LifeCycle />
+  <TheHeader>
+    <template v-slot:title>
+      <h1>Home</h1>
+    </template>
+
+    <template v-slot:description>
+      <p>dasds</p>
+    </template>
+
+    Content do header - menu
+  </TheHeader>
 
   <div v-show="showName">Nome: {{ firstName }} Sobrenome: {{ lastName }}</div>
 
@@ -9,12 +19,12 @@
 </template>
 
 <script>
-import LifeCycle from "./components/LifeCycle.vue";
+import TheHeader from "./components/TheHeader.vue";
 
 export default {
   name: "App",
   components: {
-    LifeCycle,
+    TheHeader,
   },
   data() {
     return {
