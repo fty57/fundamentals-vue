@@ -1,46 +1,20 @@
 <template>
-  <CardMovie>
-    <template v-slot:CardTitle> Black Phone </template>
-    <template v-slot:CardDescription> Never call to him again</template>
-  </CardMovie>
-
-  <TheHeader>
-    <template v-slot:title>
-      <h1>Home</h1>
-    </template>
-
-    <template v-slot:description>
-      <p>dasds</p>
-    </template>
-
-    Content do header - menu
-  </TheHeader>
-
-  <div v-show="showName">Nome: {{ firstName }} Sobrenome: {{ lastName }}</div>
-
-  <div v-if="accessLevel === 'admin'">Admin</div>
-  <div v-else-if="accessLevel === 'marketing'">Marketing</div>
-  <div v-else>User</div>
+  <div class="card">
+    Teste
+    <BaseCard />
+  </div>
 </template>
 
 <script>
-import TheHeader from "./components/TheHeader.vue";
-import CardMovie from "./components/CardMovie.vue";
+import BaseCard from "./components/BaseCard.vue";
 
 export default {
   name: "App",
   components: {
-    TheHeader,
-    CardMovie,
+    BaseCard,
   },
   data() {
-    return {
-      showHeader: true,
-      firstName: "Álisson",
-      lastName: "Véras",
-      showName: false,
-      accessLevel: "marketing",
-    };
+    return {};
   },
 };
 </script>
