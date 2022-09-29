@@ -1,17 +1,16 @@
 <template>
   <div class="card">
-    Teste
-    <BaseCard />
+    <BaseAlert variant="danger" />
   </div>
 </template>
 
 <script>
-import BaseCard from "./components/BaseCard.vue";
+import BaseAlert from "./components/BaseAlert.vue";
 
 export default {
   name: "App",
   components: {
-    BaseCard,
+    BaseAlert,
   },
   data() {
     return {};
