@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <BaseAlert variant="danger" />
+    <BaseAlert v-if="showAlert" variant="success" @close="onClose" />
   </div>
 </template>
 
@@ -13,7 +13,15 @@ export default {
     BaseAlert,
   },
   data() {
-    return {};
+    return {
+      showAlert: true,
+    };
+  },
+  methods: {
+    onClose() {
+      this.showAlert = !this.showAlert;
+      console.log("on close");
+    },
   },
 };
 </script>

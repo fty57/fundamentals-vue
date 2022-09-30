@@ -15,9 +15,10 @@
     Seu formulário foi enviado com sucesso!
   </div>
 
-  <div :class="baseClass">Seu formulário foi enviado com sucesso!</div>
-
-  <div :class="baseClass">{{ test }}</div>
+  <div :class="baseClass">
+    Seu formulário foi enviado com sucesso!
+    <button @click="onClick()">X</button>
+  </div>
 </template>
 
 <script>
@@ -27,14 +28,16 @@ export default {
       type: String,
       default: "",
     },
-    test: {
-      type: String,
-      default: "test",
-    },
   },
   computed: {
     baseClass() {
       return ["alert", this.variant ? `alert-${this.variant}` : ""];
+    },
+  },
+  methods: {
+    onClick() {
+      this.$emit('close')
+      console.log("clicou");
     },
   },
 };
@@ -42,6 +45,8 @@ export default {
 
 <style scoped>
 .alert {
+  display: flex;
+  justify-content: space-between;
   padding: 5px;
   border-radius: 6px;
   color: gray;
